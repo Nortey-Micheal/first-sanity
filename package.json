@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "description": "Day One Content Operations",
   "scripts": {
-    "dev": "npm-run-all --parallel dev",
-    "build": "npm-run-all --parallel build",
-    "dev:server": "node server.js"
- },
+    "dev": "npm-run-all --parallel dev:*",
+    "build": "npm-run-all --parallel build:*",
+    "dev:web": "npm run dev -w apps/web",
+    "dev:studio": "npm run dev -w apps/studio-hello-world"
+  },
   "engines": {
     "node": ">=20.0.0"
   },
@@ -17,5 +18,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "next-sanity": "^11.6.2"
+  }
 }
