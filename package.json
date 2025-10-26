@@ -7,7 +7,10 @@
     "dev": "npm-run-all --parallel dev:*",
     "build": "npm-run-all --parallel build:*",
     "dev:web": "npm run dev -w apps/web",
-    "dev:studio": "npm run dev -w apps/studio-hello-world"
+    "dev:studio": "npm run dev -w apps/studio-hello-world",
+    "predev": "npm run typegen --enforce-required-fields",
+    "prebuild": "npm run typegen --enforce-required-fields",
+    "typegen": "sanity schema extract && sanity typegen generate --enforce-required-fields"
   },
   "engines": {
     "node": ">=20.0.0"
